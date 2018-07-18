@@ -13,6 +13,10 @@ def run_lstm(lstm, inp, inp_len, hidden=None):
     if inp.is_cuda:
         sort_perm = torch.LongTensor(sort_perm).cuda()
         sort_perm_inv = torch.LongTensor(sort_perm_inv).cuda()
+    else:
+        sort_perm = torch.LongTensor(sort_perm)
+        sort_perm_inv = torch.LongTensor(sort_perm_inv)
+
 
     lstm_inp = nn.utils.rnn.pack_padded_sequence(inp[sort_perm],
             sort_inp_len, batch_first=True)
