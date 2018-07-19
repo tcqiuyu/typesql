@@ -1,0 +1,7 @@
+*.pyc
+*.swp
+data/*
+glove/*
+saved_model_con/*
+para-nmt-50m/*
+models/*
